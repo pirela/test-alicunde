@@ -2,10 +2,13 @@ import React from "react";
 
 import { MyButton } from "./MyButton";
 
-export const MyWrapper: Function = () => {
+export const MyWrapper = () => {
   const numberOfRender: number = 10;
+  const dataOfRender: number[] = Array.from(Array(numberOfRender).keys())
 
   return (
-    Array.from(Array(numberOfRender).keys()).map( (_item: number, key: number) => ( <MyButton key={key} />))
+    dataOfRender.map((_value: number, index: number) => (
+      <MyButton  key={index} />
+    ))
   );
 };
